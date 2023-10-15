@@ -260,7 +260,7 @@ const topologicalSort = (nodes) => {
 
 function getNodesEdges(io, allocations) {
 
-  const nodes = io.map( (n, i) => ({id: n.output, label: n.output, color: palette[allocations[n.output].binding]}) );
+  const nodes = io.map( (n, i) => ({id: n.output, label: `${n.output} - #${i}`, color: palette[allocations[n.output].binding]}) );
   const edges = io.flatMap( n => n.inputs.map(input => ({from: input, to: n.output})))
 
 
